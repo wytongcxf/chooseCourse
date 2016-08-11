@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">学生选课</string>
+    <string name="one">选修课程</string>
+    <string name="two">课程信息</string>
+    <string name="three">查询学生信息</string>
+    <string name="four">课程详细信息</string>
+    <string name="five">帮助</string>
+    <string name="six">退出系统</string>
+    <string name="submit">提交信息</string>
+    <string name="queryResult">查询结果</string>
+    <string name="queryCourse">查询课程详细信息</string>
+</resources>
