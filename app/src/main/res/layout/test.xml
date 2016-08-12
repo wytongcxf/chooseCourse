@@ -27,7 +27,7 @@
         app:layout_widthPercent="30%"/>
 
     <android.support.percent.PercentRelativeLayout
-
+        android:id="@+id/center"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_widthPercent="100%"
@@ -52,8 +52,22 @@
             android:layout_alignParentRight="true"
             />
 
-
     </android.support.percent.PercentRelativeLayout>
-
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="60%"
+        app:layout_heightPercent="20%"
+        android:layout_below="@id/center"
+        android:background="#ff00ff"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="30%"
+        android:background="#0000ff"
+        android:layout_below="@id/center"
+        android:layout_alignParentRight="true"/>
 
 </android.support.percent.PercentRelativeLayout>
