@@ -54,6 +54,7 @@ public class SQLiteUtil {
             return null;
         }
     }
+    //根据姓名查询，返回学生对象
     public Student queryStudent(String name,int sex,int age){
         String sql="select * from student where s_name='"+name+"'";
         Cursor cursor=db.rawQuery(sql,null);

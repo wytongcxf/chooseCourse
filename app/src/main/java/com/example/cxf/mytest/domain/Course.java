@@ -9,17 +9,17 @@ public class Course {
     private int id;
     private String name;
     private Teacher teacher;
-    private List<Student> stuList;
+    private int count;
 
     public Course(){
 
     }
 
-    public Course(int id, String name, Teacher teacher, List<Student> stuList) {
+    public Course(int id, String name, Teacher teacher, int count) {
         this.id = id;
         this.name = name;
         this.teacher = teacher;
-        this.stuList = stuList;
+        this.count=count;
     }
 
     public int getId() {
@@ -46,27 +46,11 @@ public class Course {
         this.teacher = teacher;
     }
 
-    public List<Student> getStuList() {
-        return stuList;
+    public int getCount() {
+        return count;
     }
 
-    public void setStuList(List<Student> stuList) {
-        this.stuList = stuList;
-    }
-
-    public boolean addStudent(Student stu){
-        if(stu==null){
-            return false;
-        }
-        if(stuList.size()>=20){
-            return false;
-        }
-        for(Student s:stuList){
-            if(s.getName().equals(stu.getName())){
-                return false;
-            }
-        }
-        stuList.add(stu);
-        return true;
+    public void setCount(int count) {
+        this.count = count;
     }
 }

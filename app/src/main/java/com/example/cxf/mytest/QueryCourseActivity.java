@@ -35,9 +35,9 @@ public class QueryCourseActivity extends AppCompatActivity {
         queryCourseText= (TextView) this.findViewById(R.id.queryResult);
         intent=getIntent();
         int courseIndex=intent.getIntExtra("index",0);
-        List<Course> courseList=myApp.getCourseList();
+        List<Course> courseList=SQLiteUtil.getInstance(this,1).queryCourseForList();
         Course course=courseList.get(courseIndex);
-        int stuCount=course.getStuList().size();
+        int stuCount=course.getCount();
         String result=course.getName()+" 已有"+stuCount+"人选，还可以增加 "+(20-stuCount)+" 人";
         queryCourseText.setText(result);
     }

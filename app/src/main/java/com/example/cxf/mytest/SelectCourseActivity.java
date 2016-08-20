@@ -36,13 +36,17 @@ public class SelectCourseActivity extends AppCompatActivity {
         this.findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Student stu=getStudent();
-                if(stu!=null){
-                    resetForm();
-                    Intent it=new Intent(context,CourseInfoActivity.class);
-                    it.putExtra("stu",stu);
-                    startActivity(it);
-                }
+                    if(validateForm()){
+                       Student stu= SQLiteUtil.getInstance(context,1).queryStudent(stuName,stuSex,stuAge);
+                        if(stu!=null){
+                            Intent it=new Intent(context,CourseInfoActivity.class);
+                            it.putExtra("stu",stu);
+                            resetForm();
+                            startActivity(it);
+                        }
+                    }else{
+                        Toast.makeText(context, "表单错误", Toast.LENGTH_SHORT).show();
+                    }
             }
         });
 
@@ -60,7 +64,6 @@ public class SelectCourseActivity extends AppCompatActivity {
 
         MyApplication myApp=(MyApplication) getApplication();
         myApp.addActivity(this);
-
         stuNameText= (EditText) findViewById(R.id.stuName);
         boyBtn= (RadioButton) findViewById(R.id.boy);
         girlBtn= (RadioButton) findViewById(R.id.girl);
@@ -98,15 +101,6 @@ public class SelectCourseActivity extends AppCompatActivity {
         }
         return true;
     }
-    //获取学生信息的方法
-    private Student getStudent(){
-
-        Student stu=null;
-        if( validateForm()){
-            stu=new Student(stuName,stuSex,stuAge);
-        }
-        return stu;
-    }
     //重置表单的方法
     private void resetForm(){
         stuNameText.setText("");
@@ -114,4 +108,5 @@ public class SelectCourseActivity extends AppCompatActivity {
         girlBtn.setChecked(false);
         stuAgeText.setText("");
     }
+
 }

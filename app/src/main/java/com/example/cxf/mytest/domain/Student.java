@@ -14,11 +14,6 @@ public class Student implements Serializable {
 
     }
 
-    public Student(String name, int sex, int age) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-    }
     public Student(int id, String name, int sex, int age) {
         this.id = id;
         this.name = name;
@@ -61,9 +56,10 @@ public class Student implements Serializable {
     @Override
     public String toString() {
         return "Student{" +
-                "age=" + age +
-                ", sex=" + sex +
+                "id=" + id +
                 ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", age=" + age +
                 '}';
     }
 }

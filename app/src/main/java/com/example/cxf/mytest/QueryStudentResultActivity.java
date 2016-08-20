@@ -34,17 +34,12 @@ public class QueryStudentResultActivity extends AppCompatActivity {
         MyApplication myApp=(MyApplication) getApplication();
         myApp.addActivity(this);
 
-        List<Course> courseList=myApp.getCourseList();
         intent=getIntent();
         String stuName=intent.getStringExtra("stuName");
+        List<String> list=SQLiteUtil.getInstance(this,1).getCourseInfo(stuName);
         String result=stuName+"选的课程为：";
-        for(Course course:courseList){
-            List<Student> students=course.getStuList();
-            for(Student student:students){
-                if(stuName.equals(student.getName())){
-                    result+=" "+course.getName();
-                }
-            }
+        for(String s:list){
+            result+=s+" ";
         }
         queryResultText= (TextView) this.findViewById(R.id.queryResult);
         queryResultText.setText(result);

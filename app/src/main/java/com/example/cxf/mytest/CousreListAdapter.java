@@ -57,7 +57,7 @@ public class CousreListAdapter extends BaseAdapter {
         vh.t1.setText(String.valueOf(course.getId()));
         vh.t2.setText(course.getName());
         vh.t3.setText(course.getTeacher().getName());
-        vh.t4.setText(String.valueOf(course.getStuList().size()));
+        vh.t4.setText(String.valueOf(course.getCount()));
 
         return convertView;
     }
