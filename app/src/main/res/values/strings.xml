@@ -9,6 +9,5 @@
     <string name="submit">提交信息</string>
     <string name="queryResult">查询结果</string>
     <string name="queryCourse">查询课程详细信息</string>
-    <string name="git">git测试</string>
-    <string name="gitaaa">git测试</string>
+    <string name="logo">logo</string>
 </resources>
