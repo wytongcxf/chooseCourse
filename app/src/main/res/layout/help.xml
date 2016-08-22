@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     >
     <TextView
-        android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_marginPercent="5%"
+        android:text="这是帮助信息！"
         android:textSize="@dimen/textsize"
         android:textColor="@color/Bg"
         />

@@ -43,7 +43,7 @@ public class CousreListAdapter extends BaseAdapter {
         ViewHolder vh=null;
         if(convertView==null){
             vh=new ViewHolder();
-            convertView=layoutInflater.inflate(R.layout.course_list,null);
+            convertView=layoutInflater.inflate(R.layout.course_list,parent,false);
             vh.t1= (TextView) convertView.findViewById(R.id.courseId);
             vh.t2= (TextView) convertView.findViewById(R.id.courseName);
             vh.t3= (TextView) convertView.findViewById(R.id.teacherName);

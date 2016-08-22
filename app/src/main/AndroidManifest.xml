@@ -16,13 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectCourseActivity"></activity>
-        <activity android:name=".ExitActivity"></activity>
-        <activity android:name=".CourseInfoActivity"></activity>
-        <activity android:name=".HelpActivity"></activity>
-        <activity android:name=".QueryStudentInfoActivity"></activity>
-        <activity android:name=".QueryStudentResultActivity"></activity>
-        <activity android:name=".QueryCourseActivity"></activity>
+        <activity android:name=".SelectCourseActivity"/>
+        <activity android:name=".ExitActivity"/>
+        <activity android:name=".CourseInfoActivity"/>
+        <activity android:name=".HelpActivity"/>
+        <activity android:name=".QueryStudentInfoActivity"/>
+        <activity android:name=".QueryStudentResultActivity"/>
+        <activity android:name=".QueryCourseActivity"/>
+        <activity android:name=".ChooseCourseActivity"/>
+        <activity android:name=".CourseDetailsActivity"/>
     </application>
 
 </manifest>

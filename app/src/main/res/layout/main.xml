@@ -116,7 +116,7 @@
                 app:layout_heightPercent="10%"
                 android:layout_alignTop="@id/image1"
                 android:layout_toRightOf="@id/image1"
-                android:text="@string/one"
+                android:text="@string/selectCourse"
                 android:textColor="#01B8B8"
                 android:textSize="@dimen/textsize"
                 android:gravity="center"
@@ -133,7 +133,7 @@
                 android:textSize="@dimen/textsize"
                 android:id="@+id/text3"
                 android:layout_alignTop="@id/image3"
-                android:text="@string/three"
+                android:text="@string/queryStudentInfo"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -146,7 +146,7 @@
                 android:textSize="@dimen/textsize"
                 android:id="@+id/text4"
                 android:layout_alignTop="@id/image4"
-                android:text="@string/four"
+                android:text="@string/coursedetails"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -159,7 +159,7 @@
                 android:textSize="@dimen/textsize"
                 android:id="@+id/text5"
                 android:layout_alignTop="@id/image5"
-                android:text="@string/five"
+                android:text="@string/help"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -172,7 +172,7 @@
                 android:textSize="@dimen/textsize"
                 android:id="@+id/text6"
                 android:layout_alignTop="@id/image6"
-                android:text="@string/six"
+                android:text="@string/exit"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -185,7 +185,7 @@
                 android:textSize="@dimen/textsize"
                 android:id="@+id/text2"
                 android:layout_alignTop="@id/image2"
-                android:text="@string/two"
+                android:text="@string/courseInfo"
                 />
         </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>

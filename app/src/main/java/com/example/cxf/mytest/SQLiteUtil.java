@@ -24,24 +24,13 @@ public class SQLiteUtil {
     //单例
     private static SQLiteUtil util;
 
-    private SQLiteUtil(Context context, int version) {
+    public SQLiteUtil(Context context, int version) {
         helper = new MySQLiteOpenHelper(context, dbName, null, version);
         db = helper.getReadableDatabase();
     }
 
-    public static SQLiteUtil getInstance(Context context, int version) {
-        if (util == null) {
-            synchronized (SQLiteUtil.class) {
-                if (util == null) {
-                    util = new SQLiteUtil(context, version);
-                }
-            }
-        }
-        return util;
-    }
-
     //添加学生到学生表,并且返回新添加的学生对象
-    private Student insertStudent(String name,int sex,int age) {
+    public Student insertStudent(String name,int sex,int age) {
         ContentValues cv = new ContentValues();
         cv.put("s_name", name);
         cv.put("s_sex", sex);
@@ -51,11 +40,12 @@ public class SQLiteUtil {
             Student student=new Student((int)id,name,sex,age);
             return student;
         }else{
+            //添加失败，数据库中可能已经有了相同名字的学生
             return null;
         }
     }
     //根据姓名查询，返回学生对象
-    public Student queryStudent(String name,int sex,int age){
+    public Student queryStudent(String name){
         String sql="select * from student where s_name='"+name+"'";
         Cursor cursor=db.rawQuery(sql,null);
         if(cursor.moveToNext()){
@@ -67,7 +57,7 @@ public class SQLiteUtil {
             return new Student(sid,sname,ssex,sage);
         }else{
             //没有查询结果
-            return insertStudent(name,sex,age);
+            return null;
         }
 
     }
@@ -119,5 +109,25 @@ public class SQLiteUtil {
             list.add(courseName);
         }
         return list;
+    }
+    //根据课程id查询课程信息
+    public Course queryCourse(int courseId){
+        String sql = "select c.c_id,c.c_name,t.t_id,t.t_name,count(sc.s_id) count from course c left join teacher t on c.t_id=t.t_id left join sc on c.c_id=sc.c_id group by c.c_id having c.c_id="+courseId;
+        Cursor cursor = db.rawQuery(sql, null);
+        Course course=null;
+        if(cursor.moveToNext()){
+            int tid = cursor.getInt(cursor.getColumnIndex("t_id"));
+            //老师的name
+            String tname=cursor.getString(cursor.getColumnIndex("t_name"));
+            Teacher teacher=new Teacher(tid,tname);
+            //课程的id
+            int cId = cursor.getInt(cursor.getColumnIndex("c_id"));
+            //课程的name
+            String cName = cursor.getString(cursor.getColumnIndex("c_name"));
+            //课程的人数
+            int count=cursor.getInt(cursor.getColumnIndex("count"));
+            course=new Course(cId,cName,teacher,count);
+        }
+        return course;
     }
 }

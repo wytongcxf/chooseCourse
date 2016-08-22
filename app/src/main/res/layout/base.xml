@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/base"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#01B8B8"
+        app:layout_heightPercent="30%">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/logo"
+            app:layout_heightPercent="40%"
+            app:layout_marginBottomPercent="13%"
+            app:layout_marginTopPercent="12%"
+            app:layout_widthPercent="40%" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@id/logo"
+            android:gravity="center"
+            android:textColor="@color/fontColor"
+            android:textSize="@dimen/toptextsize"
+            app:layout_heightPercent="25%"
+            app:layout_widthPercent="100%" />
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:background="@color/Bg2"
+        android:gravity="center">
+    </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

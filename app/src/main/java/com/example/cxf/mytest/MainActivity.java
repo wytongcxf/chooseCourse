@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         map.put(R.id.text1,SelectCourseActivity.class);
         map.put(R.id.text2,CourseInfoActivity.class);
         map.put(R.id.text3,QueryStudentInfoActivity.class);
-        map.put(R.id.text4,CourseInfoActivity.class);
+        map.put(R.id.text4,CourseDetailsActivity.class);
         map.put(R.id.text5,HelpActivity.class);
         map.put(R.id.text6,ExitActivity.class);
 

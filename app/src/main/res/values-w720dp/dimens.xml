@@ -1,3 +1,5 @@
 <resources>
     <dimen name="textsize">50dp</dimen>
+    <dimen name="toptextsize">60dp</dimen>
+    <dimen name="radius">15dp</dimen>
 </resources>

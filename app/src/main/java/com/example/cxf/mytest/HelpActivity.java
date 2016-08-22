@@ -1,32 +1,33 @@
 package com.example.cxf.mytest;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.percent.PercentRelativeLayout;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
  * Created by cxf on 2016/8/10.
  * 帮助
  */
-public class HelpActivity extends AppCompatActivity {
-    private TextView title;
-    private TextView centerText;
+public class HelpActivity extends BaseActivity {
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.query_result);
-        init();
-    }
-    private void init(){
+    protected SubView setSubView() {
+        return new SubView() {
+            @Override
+            public void addSubView() {
+                //设置标题
+                TextView titleView = (TextView) root.findViewById(R.id.title);
+                titleView.setText(getString(R.string.help));
 
-        MyApplication myApp=(MyApplication) getApplication();
-        myApp.addActivity(this);
+                View view=getLayoutInflater().inflate(R.layout.help,null);
 
-        title= (TextView) this.findViewById(R.id.title);
-        title.setText(getString(R.string.five));
-        centerText= (TextView) this.findViewById(R.id.queryResult);
-        String helpInfo="这是帮助信息！";
-        centerText.setText(helpInfo);
+                RelativeLayout relativeLayout= (RelativeLayout) root.findViewById(R.id.bottom);
+                relativeLayout.addView(view);
+
+            }
+        };
     }
 }

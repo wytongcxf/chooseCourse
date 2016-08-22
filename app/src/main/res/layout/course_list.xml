@@ -6,8 +6,8 @@
     <TextView
         android:id="@+id/courseId"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize"
         android:textColor="@color/Bg"
         android:background="@drawable/border1"
         android:gravity="center"
@@ -17,8 +17,8 @@
     <TextView
         android:id="@+id/courseName"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize"
         android:textColor="@color/Bg"
         android:background="@drawable/border1"
         android:gravity="center"
@@ -28,8 +28,8 @@
     <TextView
         android:id="@+id/teacherName"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize"
         android:textColor="@color/Bg"
         android:background="@drawable/border1"
         android:gravity="center"
@@ -39,8 +39,8 @@
     <TextView
         android:id="@+id/studentCount"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize"
         android:textColor="@color/Bg"
         android:background="@drawable/border1"
         android:gravity="center"
